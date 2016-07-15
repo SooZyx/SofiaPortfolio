@@ -120,7 +120,7 @@ body {
       position: absolute;
       z-index: 999;
       left: 30px;
-      top: 50px;
+      top: 0;
       transform-origin: 0;
       -webkit-transform: rotate(-90deg);
       -moz-transform: rotate(-90deg);
@@ -132,17 +132,17 @@ body {
         margin-bottom: 0;
         margin-left: -150px;
         display: inline-block;
-        font-size: 2rem;
+        font-size: 1.2rem;
         font-weight: bold;
         color: #3C3D4C; }
       body #menu-border_left #logo-name img {
-        width: 60px; }
+        width: 40px; }
     body #menu-border_left #nav {
       position: absolute;
       z-index: 999;
       width: 100vw;
       left: 30px;
-      bottom: 20px;
+      bottom: 25px;
       transform-origin: 0;
       -webkit-transform: rotate(-90deg);
       -moz-transform: rotate(-90deg);
@@ -152,14 +152,15 @@ body {
       body #menu-border_left #nav ul {
         display: none; }
         body #menu-border_left #nav ul li {
+          font-weight: bold;
           display: inline-block;
           position: relative;
-          font-size: 1.5rem;
+          font-size: 1rem;
           margin-right: 20px;
           cursor: pointer; }
           body #menu-border_left #nav ul li:after {
             position: absolute;
-            bottom: -2px;
+            bottom: -4px;
             left: 0;
             content: '';
             height: 4px;

@@ -55,7 +55,7 @@ body {
             z-index: 999;
 
             left: 30px;
-            top: 50px;
+            top: 0;
 
             transform-origin: 0;
 
@@ -70,7 +70,7 @@ body {
                 margin-bottom: 0;
                 margin-left: -150px;
                 display: inline-block;
-                font-size: 2rem;
+                font-size: 1.2rem;
 
                 font-weight: bold;
 
@@ -78,7 +78,7 @@ body {
             }
 
             img {
-                width: 60px;
+                width: 40px;
             }
 
         }
@@ -91,7 +91,7 @@ body {
             width: 100vw;
 
             left: 30px;
-            bottom: 20px;
+            bottom: 25px;
 
             transform-origin: 0;
 
@@ -106,16 +106,17 @@ body {
                 display: none;
 
                 li {
+                    font-weight: bold;
                     display: inline-block;
                     position: relative;
-                    font-size: 1.5rem;
+                    font-size: 1rem;
                     margin-right: 20px;
                     cursor: pointer;
 
                     &:after {
                         position: absolute;
 
-                        bottom: -2px;
+                        bottom: -4px;
                         left: 0;
 
                         content: '';
