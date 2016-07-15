@@ -1,2 +1,0 @@
-# SofiaPortfolio
-Sofia Boggio Portfolio

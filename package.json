@@ -1,10 +1,40 @@
 {
-  "name": "SofiaPortfolio",
-  "private": true,
+  "name": "sofiaportfolio",
+  "description": "Sofia Portfolio",
+  "main": "index.js",
   "scripts": {
-    "start": "meteor run"
+    "start": "npm run start:server & npm run watchcss & npm run watchjs",
+    "start:server": "node ./bin/start-server.js",
+    "build": "browserify -t [ babelify ] app/ -o static/js/main.js && uglifyjs --screw-ie8 static/js/main.js -c -o static/js/main.js",
+    "watchjs": "watchify -d -t [ babelify ] app/ -o static/js/main.js",
+    "watchcss": "node-sass -w app/sass/style.scss -o static/css/"
   },
+  "author": "Jacky Fong",
+  "license": "ISC",
   "dependencies": {
-    "meteor-node-stubs": "~0.2.0"
+    "jquery": "^3.1.0",
+    "lodash": "^4.13.1"
+  },
+  "devDependencies": {
+    "babelify": "^7.2.0",
+    "babel-preset-es2015": "^6.1.2",
+    "browser-sync": "^2.10.0",
+    "browserify": "^12.0.1",
+    "uglify-js": "^2.5.0",
+    "watchify": "^3.6.0",
+    "node-sass": "^3.4.2"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "babel": {
+    "ignore": [
+      "./app/vendor/*.js"
+    ],
+    "presets": [
+      "es2015"
+    ]
   }
 }

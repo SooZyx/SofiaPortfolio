@@ -1,0 +1,175 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  outline: none; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+@font-face {
+  font-family: 'priorisan';
+  src: url("../assets/fonts/priorisanregular-webfont.woff2") format("woff2"), url("../assets/fonts/priorisanregular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'priorisan';
+  src: url("../assets/fonts/priorisanbold-webfont.woff2") format("woff2"), url("../assets/fonts/priorisanbold-webfont.woff") format("woff");
+  font-weight: bold;
+  font-style: normal; }
+
+#landing {
+  position: relative;
+  z-index: 200;
+  height: 100vh;
+  width: 100vw; }
+  #landing #center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+    -moz-transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+    -ms-transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+    -o-transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+    transform: translateX(-50%) translateY(-50%) rotate(-90deg); }
+    #landing #center h1 {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      display: inline-block;
+      margin-right: 25px;
+      font-size: 4rem;
+      font-weight: bold;
+      color: #3C3D4C; }
+    #landing #center img {
+      width: 120px; }
+  #landing #bottom-scroll {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%); }
+    #landing #bottom-scroll:after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      height: 50px;
+      width: 4px;
+      background-color: #3C3D4C; }
+
+body {
+  background-color: darkseagreen;
+  font-family: 'priorisan', sans-serif;
+  overflow: hidden; }
+  body h1 {
+    font-size: 4em; }
+  body .menu-border_element {
+    position: fixed;
+    z-index: 100;
+    background: #F0F2FA; }
+  body #menu-border_top, body #menu-border_bottom {
+    position: fixed;
+    width: 100vw;
+    height: 50vh; }
+  body #menu-border_left, body #menu-border_right {
+    position: fixed;
+    width: 50vw;
+    height: 100vh; }
+  body #menu-border_top {
+    top: 0; }
+  body #menu-border_bottom {
+    bottom: 0; }
+  body #menu-border_left {
+    left: 0; }
+    body #menu-border_left #logo-name {
+      display: none;
+      opacity: 0;
+      margin: 0;
+      position: absolute;
+      z-index: 999;
+      left: 30px;
+      top: 50px;
+      transform-origin: 0;
+      -webkit-transform: rotate(-90deg);
+      -moz-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+      -o-transform: rotate(-90deg);
+      transform: rotate(-90deg); }
+      body #menu-border_left #logo-name h1 {
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: -150px;
+        display: inline-block;
+        font-size: 2rem;
+        font-weight: bold;
+        color: #3C3D4C; }
+      body #menu-border_left #logo-name img {
+        width: 60px; }
+    body #menu-border_left #nav {
+      position: absolute;
+      z-index: 999;
+      width: 100vw;
+      left: 30px;
+      bottom: 20px;
+      transform-origin: 0;
+      -webkit-transform: rotate(-90deg);
+      -moz-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+      -o-transform: rotate(-90deg);
+      transform: rotate(-90deg); }
+      body #menu-border_left #nav ul {
+        display: none; }
+        body #menu-border_left #nav ul li {
+          display: inline-block;
+          position: relative;
+          font-size: 1.5rem;
+          margin-right: 20px;
+          cursor: pointer; }
+          body #menu-border_left #nav ul li:after {
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            content: '';
+            height: 4px;
+            width: 0;
+            background-color: #3C3D4C;
+            -webkit-transition: all ease 0.3s;
+            -moz-transition: all ease 0.3s;
+            -o-transition: all ease 0.3s;
+            transition: all ease 0.3s; }
+          body #menu-border_left #nav ul li:hover:after {
+            width: 100%; }
+  body #menu-border_right {
+    right: 0; }
