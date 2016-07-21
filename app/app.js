@@ -1,9 +1,9 @@
 import NumberUtils from './utils/number-utils';
+import Tweens from './lib/tweens';
 import _ from 'lodash';
 import TweenMax from 'gsap';
 
 class App {
-
 
 
     constructor() {
@@ -63,45 +63,14 @@ class App {
     }
 
     onScroll(event) {
-        //console.log(event.wheelDeltaY);
 
-        if (this.canScroll == true) {
-            if (event.wheelDeltaY <= -5) {
+        if (this.canScroll == true && event.wheelDeltaY <= -5) {
 
-                console.log("down");
-                window.removeEventListener('wheel', this.launchAnimation);
+            console.log("down");
+            window.removeEventListener('wheel', this.launchAnimation);
 
-                var tl = new TimelineMax();
+            Tweens.introTween();
 
-                tl.to("#landing #bottom-scroll", 0.75, {y: 50, opacity: 0, ease: Power2.easeOut}, "john")
-                    .to("#landing #center", .75, {
-                        y: 15, opacity: 0, ease: Power2.easeOut, onComplete: () => {
-                            TweenMax.set("#landing", {display: "none"});
-                        }
-                    }, "john+=0.25");
-
-                tl.to("#menu-border .menu-border_topbottom", 1, {height: 60, ease: Power2.easeOut}, "doe")
-                    .to("#menu-border .menu-border_leftright", 1, {width: 60, ease: Power2.easeOut}, "doe")
-                    .fromTo("#menu-border #menu-border_left #logo-name", 0.75, {y: -100}, {
-                        y: 0,
-                        display: "block",
-                        opacity: 1,
-                        ease: Power2.easeOut,
-                        force3D: false
-                    }, "doe -= 0.75")
-                    .set("#menu-border #menu-border_left #nav ul", {display: "block"}, "doe -= 0.75")
-                    .staggerFrom("#menu-border #menu-border_left #nav ul li", 0.75, {
-                        left: -100,
-                        opacity: 0,
-                        ease: Power2.easeOut,
-                        force3D: true
-                    }, 0.2, "doe -= 0.5");
-
-            }
-            else if (event.wheelDeltaY >= 35) {
-
-                //console.log("up");
-            }
         }
 
     }

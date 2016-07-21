@@ -1,0 +1,126 @@
+.menu-border_element {
+    position: fixed;
+    z-index: 100;
+    background: #F0F2FA;
+}
+
+#menu-border_top, #menu-border_bottom {
+    position: fixed;
+    width: 100vw;
+    height: 50vh;
+}
+
+#menu-border_left, #menu-border_right {
+    position: fixed;
+    width: 50vw;
+    height: 100vh;
+}
+
+#menu-border_top {
+    top: 0;
+}
+
+#menu-border_bottom {
+    bottom: 0;
+}
+
+#menu-border_left {
+    left: 0;
+
+    #logo-name {
+
+        display: none;
+        opacity: 0;
+
+        margin: 0;
+
+        position: absolute;
+
+        z-index: 999;
+
+        left: 30px;
+        top: 0;
+
+        transform-origin: 0;
+
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+
+        h1 {
+            margin: 0 10px 0 -150px;
+            display: inline-block;
+            font-size: 1.2rem;
+
+            font-weight: bold;
+
+            color: $dark-blue;
+        }
+
+        img {
+            width: 40px;
+        }
+
+    }
+
+    #nav {
+
+        position: absolute;
+        z-index: 999;
+
+        width: 100vw;
+
+        left: 30px;
+        bottom: 25px;
+
+        transform-origin: 0;
+
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+
+
+        ul {
+            display: none;
+
+            li {
+                font-weight: bold;
+                display: inline-block;
+                position: relative;
+                font-size: 1.2rem;
+                margin-right: 20px;
+                cursor: pointer;
+
+                &:after {
+                    position: absolute;
+
+                    bottom: -4px;
+                    left: 0;
+
+                    content: '';
+                    height: 4px;
+                    width: 0;
+                    background-color: $dark-blue;
+
+                    -webkit-transition: all ease 0.3s;
+                    -moz-transition: all ease 0.3s;
+                    -o-transition: all ease 0.3s;
+                    transition: all ease 0.3s;
+                }
+
+                &:hover:after {
+                    width: 100%;
+                }
+            }
+        }
+
+    }
+}
+
+#menu-border_right {
+    right: 0;
+}

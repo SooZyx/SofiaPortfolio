@@ -89,88 +89,95 @@ table {
       width: 4px;
       background-color: #3C3D4C; }
 
+.menu-border_element {
+  position: fixed;
+  z-index: 100;
+  background: #F0F2FA; }
+
+#menu-border_top, #menu-border_bottom {
+  position: fixed;
+  width: 100vw;
+  height: 50vh; }
+
+#menu-border_left, #menu-border_right {
+  position: fixed;
+  width: 50vw;
+  height: 100vh; }
+
+#menu-border_top {
+  top: 0; }
+
+#menu-border_bottom {
+  bottom: 0; }
+
+#menu-border_left {
+  left: 0; }
+  #menu-border_left #logo-name {
+    display: none;
+    opacity: 0;
+    margin: 0;
+    position: absolute;
+    z-index: 999;
+    left: 30px;
+    top: 0;
+    transform-origin: 0;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg); }
+    #menu-border_left #logo-name h1 {
+      margin: 0 10px 0 -150px;
+      display: inline-block;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #3C3D4C; }
+    #menu-border_left #logo-name img {
+      width: 40px; }
+  #menu-border_left #nav {
+    position: absolute;
+    z-index: 999;
+    width: 100vw;
+    left: 30px;
+    bottom: 25px;
+    transform-origin: 0;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg); }
+    #menu-border_left #nav ul {
+      display: none; }
+      #menu-border_left #nav ul li {
+        font-weight: bold;
+        display: inline-block;
+        position: relative;
+        font-size: 1.2rem;
+        margin-right: 20px;
+        cursor: pointer; }
+        #menu-border_left #nav ul li:after {
+          position: absolute;
+          bottom: -4px;
+          left: 0;
+          content: '';
+          height: 4px;
+          width: 0;
+          background-color: #3C3D4C;
+          -webkit-transition: all ease 0.3s;
+          -moz-transition: all ease 0.3s;
+          -o-transition: all ease 0.3s;
+          transition: all ease 0.3s; }
+        #menu-border_left #nav ul li:hover:after {
+          width: 100%; }
+
+#menu-border_right {
+  right: 0; }
+
 body {
   background-color: darkseagreen;
   font-family: 'priorisan', sans-serif;
-  overflow: hidden; }
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw; }
   body h1 {
     font-size: 4em; }
-  body .menu-border_element {
-    position: fixed;
-    z-index: 100;
-    background: #F0F2FA; }
-  body #menu-border_top, body #menu-border_bottom {
-    position: fixed;
-    width: 100vw;
-    height: 50vh; }
-  body #menu-border_left, body #menu-border_right {
-    position: fixed;
-    width: 50vw;
-    height: 100vh; }
-  body #menu-border_top {
-    top: 0; }
-  body #menu-border_bottom {
-    bottom: 0; }
-  body #menu-border_left {
-    left: 0; }
-    body #menu-border_left #logo-name {
-      display: none;
-      opacity: 0;
-      margin: 0;
-      position: absolute;
-      z-index: 999;
-      left: 30px;
-      top: 0;
-      transform-origin: 0;
-      -webkit-transform: rotate(-90deg);
-      -moz-transform: rotate(-90deg);
-      -ms-transform: rotate(-90deg);
-      -o-transform: rotate(-90deg);
-      transform: rotate(-90deg); }
-      body #menu-border_left #logo-name h1 {
-        margin-top: 0;
-        margin-bottom: 0;
-        margin-left: -150px;
-        display: inline-block;
-        font-size: 1.2rem;
-        font-weight: bold;
-        color: #3C3D4C; }
-      body #menu-border_left #logo-name img {
-        width: 40px; }
-    body #menu-border_left #nav {
-      position: absolute;
-      z-index: 999;
-      width: 100vw;
-      left: 30px;
-      bottom: 25px;
-      transform-origin: 0;
-      -webkit-transform: rotate(-90deg);
-      -moz-transform: rotate(-90deg);
-      -ms-transform: rotate(-90deg);
-      -o-transform: rotate(-90deg);
-      transform: rotate(-90deg); }
-      body #menu-border_left #nav ul {
-        display: none; }
-        body #menu-border_left #nav ul li {
-          font-weight: bold;
-          display: inline-block;
-          position: relative;
-          font-size: 1rem;
-          margin-right: 20px;
-          cursor: pointer; }
-          body #menu-border_left #nav ul li:after {
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            content: '';
-            height: 4px;
-            width: 0;
-            background-color: #3C3D4C;
-            -webkit-transition: all ease 0.3s;
-            -moz-transition: all ease 0.3s;
-            -o-transition: all ease 0.3s;
-            transition: all ease 0.3s; }
-          body #menu-border_left #nav ul li:hover:after {
-            width: 100%; }
-  body #menu-border_right {
-    right: 0; }
