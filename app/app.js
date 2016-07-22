@@ -1,6 +1,6 @@
 import NumberUtils from './utils/number-utils';
+import ToolsUtils from './utils/tools-utils';
 import Tweens from './lib/tweens';
-//import Navigo from 'navigo';
 import page from 'page';
 import _ from 'lodash';
 import TweenMax from 'gsap';
@@ -41,6 +41,27 @@ class App {
             window.addEventListener('wheel', this.launchAnimation);
         });
 
+
+        ToolsUtils.addEventListenerByClass('project_aside_bottom', 'mouseover', () => {
+            TweenMax.to("#inner-container", 0.2, {y: -60});
+        });
+
+        ToolsUtils.addEventListenerByClass('project_aside_bottom', 'mouseout', () => {
+            TweenMax.to("#inner-container", 0.2, {y: 0});
+        });
+
+
+        ToolsUtils.addEventListenerByClass('project_aside_top', 'mouseover', () => {
+            TweenMax.to("#inner-container", 0.2, {y: 60});
+        });
+
+        ToolsUtils.addEventListenerByClass('project_aside_top', 'mouseout', () => {
+            TweenMax.to("#inner-container", 0.2, {y: 0});
+        });
+
+
+
+
     }
 
     /**
@@ -74,11 +95,8 @@ class App {
             console.log("down");
             window.removeEventListener('wheel', this.launchAnimation);
 
-            Tweens.introTween();
 
-            //this.router.pause(true);
-            this.router.navigate('/home');
-            //this.router.pause(false);
+            page.redirect('/home');
 
         }
 
@@ -87,25 +105,19 @@ class App {
     addRouter() {
 
         page('/home', () => {
-            console.log("home");
+            if (this.comesFromLanding) {
+                console.log("home");
+                Tweens.introTween();
+            } else {
+                Tweens.showHome();
+            }
         });
+        page('/', () => {
+            console.log("landing");
+            this.comesFromLanding = true;
+        });
+        page();
 
-        //this.router.on('/home', () => {
-        //        console.log("home");
-        //        TweenMax.set("#landing", {display: "none"});
-        //        TweenMax.set("#menu-border .menu-border_topbottom", {height: 60});
-        //        TweenMax.set("#menu-border .menu-border_leftright", {width: 60});
-        //});
-        //
-        //this.router.on(function () {
-        //        console.log("fallback");
-        //});
-        //
-        //this.router.on('/', () => {
-        //    console.log("/");
-        //});
-        //
-        //this.router.resolve();
     }
 
 

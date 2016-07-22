@@ -169,15 +169,77 @@ table {
           transition: all ease 0.3s; }
         #menu-border_left #nav ul li:hover:after {
           width: 100%; }
+      #menu-border_left #nav ul .active:after {
+        width: 100%; }
 
 #menu-border_right {
   right: 0; }
 
+* {
+  box-sizing: border-box; }
+
 body {
-  background-color: darkseagreen;
+  background-color: #F0F2FA;
   font-family: 'priorisan', sans-serif;
   overflow: hidden;
   height: 100vh;
   width: 100vw; }
   body h1 {
     font-size: 4em; }
+  body #inner-container {
+    height: -webkit-calc(100% - 120px);
+    height: -moz-calc(100% - 120px);
+    height: calc(100% - 120px);
+    width: -webkit-calc(100% - 120px);
+    width: -moz-calc(100% - 120px);
+    width: calc(100% - 120px);
+    position: absolute;
+    top: 0px;
+    left: 60px;
+    padding: 0px; }
+    body #inner-container .project_thumb {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      filter: grayscale(100%);
+      -webkit-filter: grayscale(100%);
+      -moz-filter: grayscale(100%);
+      -ms-filter: grayscale(100%);
+      -o-filter: grayscale(100%);
+      opacity: 0.5;
+      transition: all ease 0.3s; }
+      body #inner-container .project_thumb:hover {
+        filter: grayscale(0%);
+        -webkit-filter: grayscale(0%);
+        -moz-filter: grayscale(0%);
+        -ms-filter: grayscale(0%);
+        -o-filter: grayscale(0%);
+        opacity: 1;
+        cursor: pointer; }
+    body #inner-container .project_aside {
+      height: 140px; }
+    body #inner-container .project_main {
+      height: -webkit-calc(100% - (120px + 80px / 2));
+      height: -moz-calc(100% - (120px + 80px / 2));
+      height: calc(100% - (120px + 80px / 2));
+      -webkit-display: flex;
+      -ms-display: flex;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      body #inner-container .project_main:hover .center_content {
+        opacity: 1; }
+      body #inner-container .project_main .center_content {
+        max-width: 50%;
+        color: #FFFFFF;
+        opacity: 0.5;
+        transition: opacity ease 0.5s; }
+    body #inner-container #project_one {
+      background: url("../assets/img/one.png") no-repeat center;
+      background-size: cover; }
+    body #inner-container #project_two {
+      background: url("../assets/img/two.png") no-repeat center;
+      background-size: cover; }
+    body #inner-container #project_three {
+      background: url("../assets/img/three.jpg") no-repeat center;
+      background-size: cover; }

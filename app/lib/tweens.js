@@ -26,10 +26,27 @@ const Tweens = {
                 opacity: 0,
                 ease: Power2.easeOut,
                 force3D: false
-            }, 0.2, "doe -= 0.5");
+            }, 0.2, "doe -= 0.75");
+    },
 
-        return 0;
-
+    showHome() {
+        TweenMax.set("#landing", {display:"none"});
+        TweenMax.set("#menu-border .menu-border_topbottom", {height: 60, ease: Power2.easeOut});
+        TweenMax.set("#menu-border .menu-border_leftright", {width: 60, ease: Power2.easeOut});
+        TweenMax.fromTo("#menu-border #menu-border_left #logo-name", 0.75, {y: -100}, {
+            y: 0,
+            display: "block",
+            opacity: 1,
+            ease: Power2.easeOut,
+            force3D: false
+        });
+        TweenMax.set("#menu-border #menu-border_left #nav ul", {display: "block"});
+        TweenMax.staggerFrom("#menu-border #menu-border_left #nav ul li", 0.75, {
+                left: -40,
+                opacity: 0,
+                ease: Power2.easeOut,
+                force3D: false
+            }, 0.2);
     }
 
 };

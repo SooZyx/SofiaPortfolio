@@ -4,9 +4,18 @@
 @import 'menu.scss';
 
 $menuBorderWidth: 60px;
+$menuBorders: 120px;
+$asideHeight: 80px;
+$additionalAsideHeight: 40px;
+$translateInnerX: 60px;
+$translateInnerY: 60px;
+
+* {
+    box-sizing: border-box;
+}
 
 body {
-    background-color: darkseagreen;
+    background-color: #F0F2FA;
     font-family: 'priorisan', sans-serif;
     overflow: hidden;
     height: 100vh;
@@ -14,6 +23,129 @@ body {
 
     h1 {
         font-size: 4em;
+    }
+
+    #inner-container {
+        height: -webkit-calc(100% - #{$menuBorders});
+        height: -moz-calc(100% - #{$menuBorders});
+        height: calc(100% - #{$menuBorders});
+
+        width: -webkit-calc(100% - #{$menuBorders});
+        width: -moz-calc(100% - #{$menuBorders});
+        width: calc(100% - #{$menuBorders});
+
+        position: absolute;
+
+        top:0px;
+        left:60px;
+        //
+        //-webkit-transform: translateX($translateInnerX) translateY($translateInnerY);
+        //-moz-transform: translateX($translateInnerX) translateY($translateInnerY);
+        //-ms-transform: translateX$translateInner) translateY($translateInnerY);
+        //-o-transform: translateX($translateInnerX) translateY($translateInnerY);
+        //transform: translateX($translateInnerX) translateY($translateInnerY);
+
+        padding: 0px;
+
+        .project_thumb {
+            //display: block;
+            margin: 0;
+            padding: 0;
+
+            text-align: center;
+
+            filter: grayscale(100%);
+            -webkit-filter: grayscale(100%);
+            -moz-filter: grayscale(100%);
+            -ms-filter: grayscale(100%);
+            -o-filter: grayscale(100%);
+
+            opacity: 0.5;
+
+            transition: all ease 0.3s;
+
+            &:hover {
+
+                filter: grayscale(0%);
+                -webkit-filter: grayscale(0%);
+                -moz-filter: grayscale(0%);
+                -ms-filter: grayscale(0%);
+                -o-filter: grayscale(0%);
+
+                opacity: 1;
+
+                cursor:pointer;
+            }
+
+        }
+
+
+        .project_aside {
+            height: 140px;
+        }
+
+        .project_main {
+
+            height: -webkit-calc(100% - (#{$menuBorders} + #{$asideHeight} / 2));
+            height: -moz-calc(100% - (#{$menuBorders} + #{$asideHeight} / 2));
+            height: calc(100% - (#{$menuBorders} + #{$asideHeight} / 2));
+
+            -webkit-display: flex;
+            -ms-display: flex;
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            &:hover .center_content {
+                opacity: 1;
+            }
+            
+
+            .center_content {
+                max-width: 50%;
+
+                color: #FFFFFF;
+
+                opacity: 0.5;
+
+                transition: opacity ease 0.5s;
+
+            }
+        }
+
+        .project_aside_top {
+
+            //&:hover {
+            //    height: -webkit-calc(#{$asideHeight} + #{$additionalAsideHeight});
+            //    height: -moz-calc(#{$asideHeight} + #{$additionalAsideHeight});
+            //    height: calc(#{$asideHeight} + #{$additionalAsideHeight});
+            //}
+        }
+
+        .project_aside_bottom {
+
+            //&:hover {
+            //    height: -webkit-calc(#{$asideHeight} + #{$additionalAsideHeight});
+            //    height: -moz-calc(#{$asideHeight} + #{$additionalAsideHeight});
+            //    height: calc(#{$asideHeight} + #{$additionalAsideHeight});
+            //}
+        }
+
+        #project_one {
+            background: url('../assets/img/one.png') no-repeat center;
+            background-size: cover;
+        }
+
+        #project_two {
+            background: url('../assets/img/two.png') no-repeat center;
+            background-size: cover;
+        }
+
+        #project_three {
+            background: url('../assets/img/three.jpg') no-repeat center;
+            background-size: cover;
+        }
     }
 
 
