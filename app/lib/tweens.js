@@ -47,7 +47,21 @@ const Tweens = {
                 ease: Power2.easeOut,
                 force3D: false
             }, 0.2);
+    },
+    showTopThumb() {
+        TweenMax.to("#inner-container", 0.2, {y: 60});
+    },
+    hideTopThumb() {
+        TweenMax.to("#inner-container", 0.2, {y: 0});
+    },
+    showBottomThumb() {
+        TweenMax.to("#inner-container", 0.2, {y: -60});
+    },
+    hideBottomThumb() {
+        TweenMax.to("#inner-container", 0.2, {y: 0});
     }
+
+
 
 };
 

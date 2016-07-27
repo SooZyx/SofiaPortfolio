@@ -22,9 +22,7 @@ class App {
 
         this.addListeners();
 
-        //this.router = new Navigo(null, true);
         this.addRouter();
-
 
     }
 
@@ -41,26 +39,21 @@ class App {
             window.addEventListener('wheel', this.launchAnimation);
         });
 
-
-        ToolsUtils.addEventListenerByClass('project_aside_bottom', 'mouseover', () => {
-            TweenMax.to("#inner-container", 0.2, {y: -60});
-        });
-
-        ToolsUtils.addEventListenerByClass('project_aside_bottom', 'mouseout', () => {
-            TweenMax.to("#inner-container", 0.2, {y: 0});
-        });
-
-
         ToolsUtils.addEventListenerByClass('project_aside_top', 'mouseover', () => {
-            TweenMax.to("#inner-container", 0.2, {y: 60});
+            Tweens.showTopThumb();
         });
 
         ToolsUtils.addEventListenerByClass('project_aside_top', 'mouseout', () => {
-            TweenMax.to("#inner-container", 0.2, {y: 0});
+            Tweens.hideTopThumb();
         });
 
+        ToolsUtils.addEventListenerByClass('project_aside_bottom', 'mouseover', () => {
+            Tweens.showBottomThumb();
+        });
 
-
+        ToolsUtils.addEventListenerByClass('project_aside_bottom', 'mouseout', () => {
+            Tweens.hideBottomThumb();
+        });
 
     }
 
@@ -119,7 +112,6 @@ class App {
         page();
 
     }
-
 
 }
 
